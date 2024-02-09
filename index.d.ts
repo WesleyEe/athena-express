@@ -1,4 +1,4 @@
-declare module 'athena-express' {
+declare module 'athena-express-params' {
     import { S3 } from '@aws-sdk/client-s3';
     import { Athena } from '@aws-sdk/client-athena';
     interface ConnectionConfigInterface {
@@ -15,7 +15,6 @@ declare module 'athena-express' {
         skipResults: boolean,
         waitForResults: boolean,
         catalog: string,
-        pagination: string
     }
 
     interface QueryResultsInterface<T> {
@@ -36,7 +35,18 @@ declare module 'athena-express' {
 
     interface QueryObjectInterface {
         sql: string;
-        db: string;
+        db?: string;
+        pagination?: string;
+        NextToken?: string;
+        QueryExecutionId?: string;
+        catalog?: string;
+        QueryParams?: any[];
+        ResultReuseConfiguration?: {
+            ResultReuseByAgeConfiguration: {
+                Enabled: boolean;
+                MaxAgeInMinutes: number;
+            }
+        }
     }
     type DirectQueryString = string;
     type QueryExecutionId = string;
