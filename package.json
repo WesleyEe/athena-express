@@ -1,6 +1,6 @@
 {
   "name": "athena-express-params",
-  "version": "8.0.1",
+  "version": "8.1.0",
   "description": "Athena-Express makes it easier to execute SQL queries on Amazon Athena by consolidating & astracting several methods in the AWS SDK",
   "main": "./lib/index.js",
   "types": "./index.d.ts",
